@@ -5,7 +5,11 @@
 ## Getting Started
 
 ```javascript
-import rackspace from 'rackspace-email-api-wrapper'; // OR const rackspace = require('rackspace-email-api-wrapper');
+import rackspace from 'rackspace-email-api-wrapper';
+
+// OR
+
+const rackspace = require('rackspace-email-api-wrapper');
 
 rackspace.init(YOUR_USER_KEY, YOUR_SECRET_KEY);
 
@@ -19,23 +23,25 @@ const getCustomer = async () => {
 	rackspace.api('GET', `/customers?startswith=UserName`).then((response) => {
 		console.log(repsonse);
 	});
-}
+};
 
 const createCustomer = async () => {
 	const response = await rackspace.api('POST', '/customers', {
-		name: 'UserName'
+		name: 'UserName',
 	});
 
 	console.log(response);
 
 	// OR
 
-	rackspace.api('POST', '/customers', {
-		name: 'UserName'
-	}).then((response) => {
-		console.log(repsonse);
-	});
-}
+	rackspace
+		.api('POST', '/customers', {
+			name: 'UserName',
+		})
+		.then((response) => {
+			console.log(repsonse);
+		});
+};
 ```
 
 ## API
