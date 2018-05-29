@@ -9,12 +9,14 @@ const rackspace = {
 	version: 'v1',
 };
 
+const pad = (value) => (value < 10 ? `0${value}` : value);
+
 const getYear = (date = new Date()) => date.getFullYear();
-const getMonth = (date = new Date()) => (date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1);
-const getDay = (date = new Date()) => (date.getDate() < 10 ? `0${date.getDate()}` : date.getDate());
-const getHours = (date = new Date()) => (date.getHours() < 10 ? `0${date.getHours()}` : date.getHours());
-const getMinutes = (date = new Date()) => (date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes());
-const getSeconds = (date = new Date()) => (date.getSeconds() < 10 ? `0${date.getSeconds()}` : date.getSeconds());
+const getMonth = (date = new Date()) => pad(date.getMonth() + 1);
+const getDay = (date = new Date()) => pad(date.getDate());
+const getHours = (date = new Date()) => pad(date.getHours());
+const getMinutes = (date = new Date()) => pad(date.getMinutes());
+const getSeconds = (date = new Date()) => pad(date.getSeconds());
 const getTime = (date = new Date()) => `${getYear(date)}${getMonth(date)}${getDay(date)}${getHours(date)}${getMinutes(date)}${getSeconds(date)}`;
 
 const getHash = (time) =>
