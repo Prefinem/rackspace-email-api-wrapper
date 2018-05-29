@@ -1,0 +1,9 @@
+env:
+language: node_js
+node_js:
+  - "9"
+cache: yarn
+install:
+  - "yarn"
+script:
+  - "yarn build"
