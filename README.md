@@ -40,10 +40,10 @@ const createCustomer = async () => {
 
 ## API
 
-***init*** - init(key, secret)
+**init** - init(key, secret)
 
 The init method sets the key and secret used for authenticating the API calls
 
-***api*** - api(method, url, payload)
+**api** - api(method, url, payload)
 
 The api method creates a signed request and parses the response. It returns a promise that can be awaited if you are using asycn / await
