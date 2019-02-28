@@ -1,5 +1,6 @@
-import crypto from 'crypto';
-import https from 'https';
+const crypto = require('crypto');
+const https = require('https');
+const format = require('date-format');
 
 const rackspace = {
 	hostname: 'api.emailsrvr.com',
@@ -9,16 +10,7 @@ const rackspace = {
 	version: 'v1',
 };
 
-const pad = (value) => (value < 10 ? `0${value}` : value);
-
-const getYear = (date = new Date()) => date.getFullYear();
-const getMonth = (date = new Date()) => pad(date.getMonth() + 1);
-const getDay = (date = new Date()) => pad(date.getDate());
-const getHours = (date = new Date()) => pad(date.getHours());
-const getMinutes = (date = new Date()) => pad(date.getMinutes());
-const getSeconds = (date = new Date()) => pad(date.getSeconds());
-const getTime = (date = new Date()) => `${getYear(date)}${getMonth(date)}${getDay(date)}${getHours(date)}${getMinutes(date)}${getSeconds(date)}`;
-
+const getTime = (date = new Date()) => format('yyyyMMddhhmmss', date);
 const getHash = (time) =>
 	crypto
 		.createHash('sha1')
@@ -56,12 +48,12 @@ const apiResponse = (response, resolve) => {
 	});
 };
 
-export const init = (key, secret) => {
+const init = (key, secret) => {
 	rackspace.key = key;
 	rackspace.secret = secret;
 };
 
-export const api = (method, url, data) =>
+const api = (method, url, data) =>
 	new Promise((resolve, reject) => {
 		const request = https.request(buildOptions(method, url), (response) => apiResponse(response, resolve));
 
@@ -76,7 +68,7 @@ export const api = (method, url, data) =>
 		}
 	});
 
-export default {
+module.exports = {
 	api,
 	init,
 };

@@ -1,55 +1,45 @@
 {
 	"env": {
+		"browser": true,
 		"es6": true,
 		"node": true
 	},
 	"extends": ["eslint:all", "prettier"],
-	"parser": "babel-eslint",
 	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 10,
 		"sourceType": "module"
 	},
 	"rules": {
-		"array-bracket-newline": "off",
 		"array-element-newline": "off",
-		"brace-style": "off",
 		"capitalized-comments": "off",
 		"class-methods-use-this": "off",
-		"comma-dangle": ["error", "always-multiline"],
-		"dot-location": ["error", "property"],
 		"eol-last": "off",
+		"func-style": "off",
 		"global-require": "off",
 		"id-length": "off",
-		"indent": ["error", "tab"],
 		"init-declarations": "off",
-		"max-len": ["error", 180],
-		"max-statements-per-line": [
-			"error",
-			{
-				"max": 2
-			}
-		],
+		"lines-between-class-members": "off",
+		"multiline-comment-style": "off",
 		"multiline-ternary": "off",
-		"newline-per-chained-call": [
-			"error",
-			{
-				"ignoreChainWithDepth": 3
-			}
-		],
-		"no-confusing-arrow": [
-			"error",
-			{
-				"allowParens": true
-			}
-		],
 		"no-console": "off",
 		"no-extra-parens": "off",
+		"no-invalid-this": "off",
 		"no-magic-numbers": "off",
-		"no-process-env": "off",
+		"no-shadow": "off",
 		"no-sync": "off",
 		"no-tabs": "off",
 		"no-ternary": "off",
 		"no-undefined": "off",
-		"object-curly-spacing": ["error", "always"],
+		"no-unused-expressions": [
+			"error",
+			{
+				"allowShortCircuit": true,
+				"allowTernary": true
+			}
+		],
 		"one-var": "off",
 		"padded-blocks": "off",
 		"padding-line-between-statements": [
@@ -68,11 +58,6 @@
 		"quote-props": "off",
 		"quotes": "off",
 		"radix": "off",
-		"valid-jsdoc": [
-			"error",
-			{
-				"requireReturn": false
-			}
-		]
+		"require-jsdoc": "off"
 	}
 }

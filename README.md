@@ -23,10 +23,6 @@ Rackspace Email API Wrapper is a wrapper for making calls to Rackspace's Email A
 ## Getting Started
 
 ```javascript
-import rackspace from 'rackspace-email-api-wrapper';
-
-// OR
-
 const rackspace = require('rackspace-email-api-wrapper');
 
 rackspace.init(YOUR_USER_KEY, YOUR_SECRET_KEY);
