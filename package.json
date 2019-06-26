@@ -10,7 +10,7 @@
 	"description": "Lambda Helpers that are completely Async / Await capable",
 	"devDependencies": {
 		"eslint": "^6.0.0",
-		"eslint-config-prettier": "^5.0.0",
+		"eslint-config-prettier": "^6.0.0",
 		"jest": "^23.0.0",
 		"pkg-ok": "^2.1.0",
 		"prettier": "^1.16.4"
