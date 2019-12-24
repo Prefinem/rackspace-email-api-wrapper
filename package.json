@@ -5,7 +5,7 @@
 		"url": "http://prefinem.com"
 	},
 	"dependencies": {
-		"date-format": "^2.0.0"
+		"date-format": "^3.0.0"
 	},
 	"description": "Lambda Helpers that are completely Async / Await capable",
 	"devDependencies": {
