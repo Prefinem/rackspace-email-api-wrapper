@@ -13,7 +13,7 @@
 		"eslint-config-prettier": "6.11.0",
 		"jest": "26.4.1",
 		"pkg-ok": "2.3.1",
-		"prettier": "2.0.5"
+		"prettier": "2.1.1"
 	},
 	"engines": {
 		"node": ">=8"
